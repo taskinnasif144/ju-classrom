@@ -17,7 +17,7 @@ export default function Home() {
     if (cookies.access_token) {
       router.push("/dashboard");
     }
-  }, []);
+  });
 
   const toHomePage = async () => {
     if (id != "" && pass != "") {

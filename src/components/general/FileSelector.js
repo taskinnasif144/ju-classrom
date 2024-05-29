@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetID } from "@/Helpers/getLocalDatas";
+import { getID } from "@/Helpers/getLocalDatas";
 import setData from "@/firebase/firestore/setData";
 import uploadFileToFirebase from "@/firebase/firestore/uploadFile";
 import { useEffect, useState } from "react";
@@ -36,7 +36,7 @@ function FileSelector() {
   };
 
   useEffect(() => {
-    setID(useGetID());
+    setID(getID());
   }, []);
 
   return (

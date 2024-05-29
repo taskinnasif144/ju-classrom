@@ -25,7 +25,7 @@ const UserList = ({ isStudent }) => {
       }
     };
     getUsers();
-  }, []);
+  });
   return (
     <div className="px-12 flex flex-col">
       <h3 className="text-5xl font-bold">

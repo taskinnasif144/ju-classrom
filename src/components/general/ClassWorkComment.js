@@ -1,13 +1,13 @@
 import { Avatar } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
-import { useGetDP } from "@/Helpers/getLocalDatas";
+import { getDP } from "@/Helpers/getLocalDatas";
 
 const ClassWorkComment = () => {
   const [dp, setDP] = useState("");
 
   useEffect(() => {
-    setDP(useGetDP());
+    setDP(getDP());
   }, []);
   return (
     <div className="mt-8 flex items-center">

@@ -3,7 +3,7 @@ import FacultyOpts from "@/components/dashboard/FacultyOpts";
 import CreateClass from "../FacultyOps/CreateClass";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { useGetID } from "@/Helpers/getLocalDatas";
+import { getID } from "@/Helpers/getLocalDatas";
 import ClassRoom from "../general/ClassRoom";
 import queryAllData from "@/firebase/firestore/queryAllData";
 
@@ -22,7 +22,7 @@ const FacultyDash = () => {
 
   useEffect(() => {
     const getClassRooms = async () => {
-      const myID = useGetID();
+      const myID = getID();
       const res = await queryAllData("classes", "facultyID", myID);
 
       if (!res) {

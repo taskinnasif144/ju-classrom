@@ -1,11 +1,11 @@
-export const useGetName = () => {
+export const getName = () => {
   return window.localStorage.getItem("name");
 };
 
-export const useGetDesignation = () => {
+export const getDesignation = () => {
   return window.localStorage.getItem("designation");
 };
-export const useGetID = () => {
+export const getID = () => {
   return window.localStorage.getItem("ID");
 };
 export const useGetBatch = () => {
@@ -20,7 +20,7 @@ export const useGetEmail = () => {
 export const useGetDepartment = () => {
   return window.localStorage.getItem("department");
 };
-export const useGetDP = () => {
+export const getDP = () => {
   return window.localStorage.getItem("dp");
 };
 

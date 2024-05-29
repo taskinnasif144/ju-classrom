@@ -4,7 +4,7 @@ import AddIcon from "@mui/icons-material/Add";
 import uploadMultipleFilesToFirebase from "@/firebase/firestore/UploadMultiFIles";
 import addData from "@/firebase/firestore/addData";
 import toast, { Toaster } from "react-hot-toast";
-import { useGetDP, useGetID, useGetName } from "@/Helpers/getLocalDatas";
+import { getDP, getID, getName } from "@/Helpers/getLocalDatas";
 
 const CreateAssignment = ({ classID, clsworks }) => {
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -30,9 +30,9 @@ const CreateAssignment = ({ classID, clsworks }) => {
   const handlePost = async () => {
     if (title != "" || description != "") {
       var files = await uploadMultipleFilesToFirebase(selectedFiles);
-      const facultyName = useGetName();
-      const facultyDp = useGetDP();
-      const facultyID = useGetID();
+      const facultyName = getName();
+      const facultyDp = getDP();
+      const facultyID = getID();
       const data = {
         title,
         description,

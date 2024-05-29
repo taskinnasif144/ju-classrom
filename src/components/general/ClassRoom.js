@@ -14,7 +14,7 @@ const ClassRoom = ({ title, section, dept, room, faculty, facultyID }) => {
     };
 
     getFacultyDp();
-  }, []);
+  });
   return (
     <div className="w-full bg-[#123C3E] text-[#FAF1E2] p-12 my-12 flex justify-between items-center">
       <div>

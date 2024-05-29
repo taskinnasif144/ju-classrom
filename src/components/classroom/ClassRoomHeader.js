@@ -1,3 +1,5 @@
+"use client";
+
 import React, { act, useState } from "react";
 import ClassStudentList from "./ClassStudentList";
 import queryAllData from "@/firebase/firestore/queryAllData";

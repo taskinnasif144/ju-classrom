@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { Avatar } from "@mui/material";
 import {
-  useGetDP,
+  getDP,
   useGetDepartment,
-  useGetDesignation,
-  useGetID,
-  useGetName,
+  getDesignation,
+  getID,
+  getName,
 } from "@/Helpers/getLocalDatas";
 import getData from "@/firebase/firestore/getData";
 
@@ -16,9 +16,9 @@ const SiderBarUpper = () => {
   const [designation, setDesignation] = useState("");
 
   useEffect(() => {
-    setDp(useGetDP());
-    setName(useGetName());
-    setDesignation(useGetDesignation());
+    setDp(getDP());
+    setName(getName());
+    setDesignation(getDesignation());
   }, []);
   return (
     <div className="">

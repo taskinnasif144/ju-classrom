@@ -10,7 +10,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import SideBarButton from "./SideBarButton";
 import { useRouter } from "next/navigation";
 import { useCookies } from "react-cookie";
-import { token, useGetDesignation } from "@/Helpers/getLocalDatas";
+import { token, getDesignation } from "@/Helpers/getLocalDatas";
 import { adminAccess, facultyAccess } from "@/Helpers/userAccess";
 import SchoolIcon from "@mui/icons-material/School";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
@@ -103,7 +103,7 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
-    setDesignation(useGetDesignation());
+    setDesignation(getDesignation());
   }, []);
 
   return (

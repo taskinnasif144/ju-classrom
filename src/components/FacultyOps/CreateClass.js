@@ -1,4 +1,4 @@
-import { useGetID, useGetName } from "@/Helpers/getLocalDatas";
+import { getID, getName } from "@/Helpers/getLocalDatas";
 import addData from "@/firebase/firestore/addData";
 import { Room } from "@mui/icons-material";
 import { Timestamp } from "firebase/firestore";
@@ -11,8 +11,8 @@ const CreateClass = ({ func, toast }) => {
   const [room, setRoom] = useState("");
 
   const handleCreateclass = async () => {
-    const facultyName = useGetName();
-    const facultyID = useGetID();
+    const facultyName = getName();
+    const facultyID = getID();
     const data = {
       department: name,
       section,
