@@ -1,4 +1,3 @@
-import StoreProvider from "./StoreProvider";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
