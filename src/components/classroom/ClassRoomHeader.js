@@ -42,10 +42,6 @@ const ClassRoomHeader = ({ subject, section, classID }) => {
         } else {
           newArray = res;
         }
-        if (newArray.length == 0) {
-          toast.error("No Students available");
-        }
-        console.log(newArray.map((obj) => obj.ID));
         setAllStd(newArray.map((obj) => obj.ID));
       } else {
         toast.error("check your connection and try again later");
