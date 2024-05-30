@@ -10,7 +10,6 @@ const StudentListItem = ({ std, classID, rmSTD, isAdd }) => {
   const [stdData, setStdData] = useState({});
 
   const handleAddStudentToClass = async () => {
-    console.log(std);
     var data;
     if (isAdd) {
       data = {
@@ -22,7 +21,6 @@ const StudentListItem = ({ std, classID, rmSTD, isAdd }) => {
       };
     }
     const res = await setData("classes", classID, data);
-    console.log(res);
     if (res.result) {
       toast.success("Student Added");
       rmSTD(std);

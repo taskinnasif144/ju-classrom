@@ -17,7 +17,7 @@ const UserList = ({ isStudent }) => {
     const getUsers = async () => {
       if (isStudent) {
         const data = await queryAllData("users", "designation", "Student");
-
+        console.log("data ---------- \n ------------- \n", data);
         setUsers(data);
       } else {
         const data = await queryAllData("users", "designation", "Faculty");
@@ -32,15 +32,19 @@ const UserList = ({ isStudent }) => {
         {isStudent ? "Student" : "Faculty"}
       </h3>
       <div>
-        {users.map((user) => (
-          <UserBlock
-            key={user.id}
-            userData={user}
-            rm={removeUser}
-            isStudent={isStudent}
-            add={addUser}
-          />
-        ))}
+        {!users ? (
+          <></>
+        ) : (
+          users.map((user) => (
+            <UserBlock
+              key={user.id}
+              userData={user}
+              rm={removeUser}
+              isStudent={isStudent}
+              add={addUser}
+            />
+          ))
+        )}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import setData from "@/firebase/firestore/setData";
 
 const UserBlock = ({ userData, rm, isStudent, add }) => {
-  const removeUser = async () => {
+  const removeUser = () => {
     const res = deleteData("users", userData.id);
     if (res) {
       toast.success("User Removed");
@@ -37,7 +37,7 @@ const UserBlock = ({ userData, rm, isStudent, add }) => {
             {userData.name}
           </h2>
           <div className="pt-2 flex flex-col text-lg text-gray-600">
-            <span class>ID: {userData.ID}</span>
+            <span>ID: {userData.ID}</span>
             <span>
               section: {userData.section} batch: {userData.batch} dept:{" "}
               {userData.department}

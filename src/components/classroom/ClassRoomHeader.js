@@ -19,7 +19,7 @@ const ClassRoomHeader = ({ subject, section, classID }) => {
     setIsAdd(false);
     if (!activeList) {
       const res = await getData("classes", classID);
-      console.log(res);
+
       if (res.result) {
         setAllStd(res.result.students);
         toast.success("Students Loaded");
@@ -36,6 +36,7 @@ const ClassRoomHeader = ({ subject, section, classID }) => {
     if (!activeList) {
       toast.success("Students are being Loaded");
       const res = await queryAllData("users", "designation", "Student");
+      console.log(res);
       const res2 = await getData("classes", classID);
       if (res && res2) {
         var newArray;

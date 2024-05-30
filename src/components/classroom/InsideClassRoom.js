@@ -5,6 +5,7 @@ import CreateAssignment from "./CreateAssignment";
 import ClassWorkView from "../general/ClassWorkView";
 import queryAllData from "@/firebase/firestore/queryAllData";
 import { getID } from "@/Helpers/getLocalDatas";
+import getData from "@/firebase/firestore/getData";
 
 const InsideClassRoom = ({ classID }) => {
   const [classWorks, setClassWorks] = useState([]);
@@ -30,7 +31,7 @@ const InsideClassRoom = ({ classID }) => {
     };
 
     const getClassRoomInfo = async () => {
-      const res = await getData("classes", params.id);
+      const res = await getData("classes", classID);
 
       if (res.result && !res.error) {
         setClassInfo(res.result);
