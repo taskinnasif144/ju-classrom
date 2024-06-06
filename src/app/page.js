@@ -17,7 +17,8 @@ export default function Home() {
     if (cookies.access_token) {
       router.push("/dashboard");
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const toHomePage = async () => {
     if (id != "" && pass != "") {

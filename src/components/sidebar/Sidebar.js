@@ -11,7 +11,11 @@ import SideBarButton from "./SideBarButton";
 import { useRouter } from "next/navigation";
 import { useCookies } from "react-cookie";
 import { token, getDesignation } from "@/Helpers/getLocalDatas";
-import { adminAccess, facultyAccess } from "@/Helpers/userAccess";
+import {
+  adminAccess,
+  facultyAccess,
+  studentAccess,
+} from "@/Helpers/userAccess";
 import SchoolIcon from "@mui/icons-material/School";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import GradingIcon from "@mui/icons-material/Grading";
@@ -52,6 +56,7 @@ const Sidebar = () => {
     setCreateUSerState(false);
     setEditUserState(true);
     setProfileState(false);
+    router.push("/dashboard/edit-result");
   };
 
   const activeProfile = () => {
@@ -78,7 +83,7 @@ const Sidebar = () => {
     setAssignmentState(true);
     setResultState(false);
     setProfileState(false);
-    router.push("/dashboard/assignments");
+    router.push("/dashboard/exams");
   };
   const activeResult = () => {
     setDashState(false);
@@ -132,13 +137,15 @@ const Sidebar = () => {
             func={activeEditUser}
           />
         )}
-        {facultyAccess(designation) && (
+        {facultyAccess(designation) || studentAccess(designation) ? (
           <SideBarButton
             Icon={SchoolIcon}
             label={"Classroom"}
             isActive={classRoomState}
             func={activeClassRoom}
           />
+        ) : (
+          <></>
         )}
         {facultyAccess(designation) && (
           <SideBarButton

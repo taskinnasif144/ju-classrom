@@ -1,11 +1,10 @@
-import DashboardPage from "@/components/PageComponents/DashboardPage";
-
+import EditUserPage from "@/components/PageComponents/EditUserPage";
 import React from "react";
 
 const page = () => {
   return (
     <div className="w-full">
-      <DashboardPage />
+      <EditUserPage />
     </div>
   );
 };

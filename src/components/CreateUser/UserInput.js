@@ -94,7 +94,7 @@ const UserInput = ({ isStudent }) => {
         />
         <input
           className="w-4/5 shadow-3xl bg-transparent p-4 border-none outline-none my-2"
-          placeholder="Batch"
+          placeholder={isStudent ? "Batch" : "Designation"}
           value={batch}
           onChange={(e) => setBatch(e.target.value)}
         />

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import UserBlock from "./UserBlock";
 import queryAllData from "@/firebase/firestore/queryAllData";
+import getAllData from "@/firebase/firestore/getAllData";
 
 const UserList = ({ isStudent }) => {
   const [users, setUsers] = useState([]);
@@ -17,7 +18,7 @@ const UserList = ({ isStudent }) => {
     const getUsers = async () => {
       if (isStudent) {
         const data = await queryAllData("users", "designation", "Student");
-        console.log("data ---------- \n ------------- \n", data);
+
         setUsers(data);
       } else {
         const data = await queryAllData("users", "designation", "Faculty");
@@ -25,7 +26,8 @@ const UserList = ({ isStudent }) => {
       }
     };
     getUsers();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="px-12 flex flex-col">
       <h3 className="text-5xl font-bold">

@@ -4,8 +4,9 @@ import ClassRoomHeader from "./ClassRoomHeader";
 import CreateAssignment from "./CreateAssignment";
 import ClassWorkView from "../general/ClassWorkView";
 import queryAllData from "@/firebase/firestore/queryAllData";
-import { getID } from "@/Helpers/getLocalDatas";
+import { getDesignation, getID } from "@/Helpers/getLocalDatas";
 import getData from "@/firebase/firestore/getData";
+import { facultyAccess, facultyOrStudentAccess } from "@/Helpers/userAccess";
 
 const InsideClassRoom = ({ classID }) => {
   const [classWorks, setClassWorks] = useState([]);
@@ -17,16 +18,10 @@ const InsideClassRoom = ({ classID }) => {
 
   useEffect(() => {
     const getClassWorks = async () => {
-      const facultyID = getID();
-      const res = await queryAllData("classworks", "facultyID", facultyID);
+      const res = await queryAllData("classworks", "classID", classID);
       if (res) {
         var classes = [];
-        for (var i = 0; i < res.length; i++) {
-          if (res[i].classID == classID) {
-            classes.push(res[i]);
-          }
-        }
-        setClassWorks(classes);
+        setClassWorks(res);
       }
     };
 
@@ -39,7 +34,9 @@ const InsideClassRoom = ({ classID }) => {
     };
     getClassWorks();
     getClassRoomInfo();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="">
       <ClassRoomHeader
@@ -47,11 +44,12 @@ const InsideClassRoom = ({ classID }) => {
         section={classInfo.section}
         classID={classID}
       />
-      <CreateAssignment classID={classID} clsworks={addNewWork} />
+      {facultyOrStudentAccess(getDesignation()) && (
+        <CreateAssignment classID={classID} clsworks={addNewWork} />
+      )}
 
-      {classWorks.map((cls) => (
-        <ClassWorkView key={cls.id} classInfo={cls} />
-      ))}
+      {facultyOrStudentAccess(getDesignation()) &&
+        classWorks.map((cls) => <ClassWorkView key={cls.id} examInfo={cls} />)}
     </div>
   );
 };

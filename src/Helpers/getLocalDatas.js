@@ -17,7 +17,7 @@ export const useGetUserName = () => {
 export const useGetEmail = () => {
   return window.localStorage.getItem("email");
 };
-export const useGetDepartment = () => {
+export const getDepartment = () => {
   return window.localStorage.getItem("department");
 };
 export const getDP = () => {

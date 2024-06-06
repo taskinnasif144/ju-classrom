@@ -21,3 +21,18 @@ export const facultyAccess = (designation) => {
     return false;
   }
 };
+
+export const facultyOrStudentAccess = (designation) => {
+  if (designation == "Faculty" || designation == "Student") {
+    return true;
+  } else {
+    return false;
+  }
+};
+export const facultyOrAdminAccess = (designation) => {
+  if (designation == "Faculty" || designation == "Super-Admin") {
+    return true;
+  } else {
+    return false;
+  }
+};

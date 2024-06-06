@@ -25,7 +25,7 @@ const StudentListItem = ({ std, classID, rmSTD, isAdd }) => {
       toast.success("Student Added");
       rmSTD(std);
     } else {
-      ("check your connection and try again later");
+      toast.error("check your connection and try again later");
     }
   };
 

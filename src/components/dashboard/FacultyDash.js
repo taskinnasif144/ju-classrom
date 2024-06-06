@@ -26,7 +26,7 @@ const FacultyDash = () => {
       const res = await queryAllData("classes", "facultyID", myID);
 
       if (!res) {
-        toast.error("No Classrooms have been created yet");
+        toast.error("No Classrooms Found");
       } else {
         setClassrooms(res);
       }

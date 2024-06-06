@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import FacultyOpts from "../dashboard/FacultyOpts";
 import AddIcon from "@mui/icons-material/Add";
@@ -6,10 +8,11 @@ import addData from "@/firebase/firestore/addData";
 import toast, { Toaster } from "react-hot-toast";
 import { getDP, getID, getName } from "@/Helpers/getLocalDatas";
 
-const CreateAssignment = ({ classID, clsworks }) => {
+const CreateAssignment = ({ classID, clsworks, isExam = false }) => {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
+  const [baseMark, setBaseMark] = useState(null);
 
   const handleFileChange = (event) => {
     setSelectedFiles(Array.from(event.target.files));
@@ -41,10 +44,16 @@ const CreateAssignment = ({ classID, clsworks }) => {
         facultyID,
         files,
         classID,
+        baseMark,
         timestamp: Date.now(),
       };
+      var res;
+      if (isExam) {
+        res = await addData("exams", data);
+      } else {
+        res = await addData("classworks", data);
+      }
 
-      const res = await addData("classworks", data);
       if (res.result) {
         toast.success("Post Craeted");
         clsworks(data);
@@ -62,13 +71,26 @@ const CreateAssignment = ({ classID, clsworks }) => {
   return (
     <div>
       <div>
-        <div className="shadow-3xl p-8 flex">
-          <div className="mr-4">
-            <div className="text-4xl p-4 max-w-min max-h-min text-white bg-[#D4D4D4]">
-              <AddIcon fontSize="inherit" />
+        <div className="shadow-3xl p-8 flex ">
+          {!isExam && (
+            <div className="mr-4">
+              <div className="text-4xl p-4 max-w-min max-h-min text-white bg-[#D4D4D4]">
+                <AddIcon fontSize="inherit" />
+              </div>
             </div>
-          </div>
+          )}
           <div className="flex flex-col w-full">
+            {isExam && (
+              <input
+                className="my-2 mt-0 w-full p-4 rounded-lg outline-none"
+                placeholder="Base Mark"
+                type="number"
+                value={baseMark}
+                onChange={(e) => setBaseMark(e.target.value)}
+                min="0"
+                max={"100"}
+              />
+            )}
             <input
               className="my-2 mt-0 w-full p-4 rounded-lg outline-none"
               placeholder="Title"

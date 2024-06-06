@@ -8,7 +8,7 @@ const SideBarButton = ({ isActive, Icon, label, func }) => {
         isActive ? "bg-[#FAF1E2]  rounded-s-full" : "text-[#FAF1E2]"
       } `}
     >
-      <div className="text-6xl">
+      <div className="text-4xl">
         <Icon fontSize="inherit" />
       </div>
       <span className="ml-4">{label}</span>

@@ -1,3 +1,4 @@
+"use client";
 import getDocumentByField from "@/firebase/firestore/queryData";
 import { Avatar } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -14,7 +15,8 @@ const ClassRoom = ({ title, section, dept, room, faculty, facultyID }) => {
     };
 
     getFacultyDp();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="w-full bg-[#123C3E] text-[#FAF1E2] p-12 my-12 flex justify-between items-center">
       <div>

@@ -11,8 +11,6 @@ const SuperAdminDash = () => {
   return (
     <div className="flex flex-wrap">
       <SupAdOpts Icon={PeopleIcon} label={"All Users"} func={allUserPageLink} />
-      <SupAdOpts Icon={PeopleIcon} label={"Change User Type "} />
-      <SupAdOpts Icon={PeopleIcon} label={"Rewrite Result"} />
     </div>
   );
 };

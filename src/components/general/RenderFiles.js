@@ -4,7 +4,7 @@ import Link from "next/link";
 const RenderFiles = ({ name, link }) => {
   return (
     <Link href={link}>
-      <div className="shadow-3xl flex items-center p-5 rounded-2xl cursor-pointer">
+      <div className="shadow-3xl flex items-center p-2 px-5 rounded-2xl cursor-pointer bg-[#FAF1E2]">
         <div className="text-3xl">
           <FileCopyIcon />
         </div>

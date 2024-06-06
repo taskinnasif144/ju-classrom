@@ -22,8 +22,8 @@ const SiderBarUpper = () => {
   }, []);
   return (
     <div className="">
-      <div className="mt-16 mb-10 h-[250px] w-[250px] rounded-lg flex items-center justify-center">
-        <Avatar src={dp} sx={{ width: 220, height: 220 }} />
+      <div className="mt-8 mb-5 h-[200px] w-[200px] rounded-lg flex items-center justify-center">
+        <Avatar src={dp} sx={{ width: 180, height: 180 }} />
       </div>
       <div className="text-white text-center w-full">
         <h2 className="text-3xl ">{name}</h2>

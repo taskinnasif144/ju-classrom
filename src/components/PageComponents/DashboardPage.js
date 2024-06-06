@@ -5,9 +5,14 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useCookies } from "react-cookie";
 import SuperAdminDash from "@/components/dashboard/SuperAdminDash";
-import { adminAccess, facultyAccess } from "@/Helpers/userAccess";
+import {
+  adminAccess,
+  facultyAccess,
+  studentAccess,
+} from "@/Helpers/userAccess";
 import FacultyOpts from "@/components/dashboard/FacultyOpts";
 import FacultyDash from "@/components/dashboard/FacultyDash";
+import StudentDash from "../dashboard/StudentDash";
 
 const DashboardPage = () => {
   const router = useRouter();
@@ -20,7 +25,8 @@ const DashboardPage = () => {
     }
     setDesignation(getDesignation());
     setName(getName());
-  });
+    //eslint-disable-next-line
+  }, []);
   return (
     <div className="w-full h-screen">
       <div className="m-6 my-8">
@@ -34,6 +40,7 @@ const DashboardPage = () => {
       </div>
       {facultyAccess(designation) && <FacultyDash />}
       {adminAccess(designation) && <SuperAdminDash />}
+      {studentAccess(designation) && <StudentDash />}
     </div>
   );
 };
