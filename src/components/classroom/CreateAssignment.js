@@ -71,9 +71,9 @@ const CreateAssignment = ({ classID, clsworks, isExam = false }) => {
   return (
     <div>
       <div>
-        <div className="shadow-3xl p-8 flex ">
+        <div className="shadow-3xl p-3 xs:p-4 sm:p-8 flex ">
           {!isExam && (
-            <div className="mr-4">
+            <div className="hidden sm:block mr-4">
               <div className="text-4xl p-4 max-w-min max-h-min text-white bg-[#D4D4D4]">
                 <AddIcon fontSize="inherit" />
               </div>
@@ -82,7 +82,7 @@ const CreateAssignment = ({ classID, clsworks, isExam = false }) => {
           <div className="flex flex-col w-full">
             {isExam && (
               <input
-                className="my-2 mt-0 w-full p-4 rounded-lg outline-none"
+                className="my-2 mt-0 w-full p-2 sm:p-4 rounded-lg outline-none"
                 placeholder="Base Mark"
                 type="number"
                 value={baseMark}
@@ -92,24 +92,27 @@ const CreateAssignment = ({ classID, clsworks, isExam = false }) => {
               />
             )}
             <input
-              className="my-2 mt-0 w-full p-4 rounded-lg outline-none"
+              className="my-2 mt-0 w-full p-2 sm:p-4 rounded-lg outline-none"
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
             <textarea
-              className="my-2 resize-none w-full h-[150px] p-4 rounded-lg outline-none"
+              className="my-2 resize-none w-full h-[150px] p-2 sm:p-4 rounded-lg outline-none"
               placeholder="Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
             <div className="flex flex-col space-y-2">
-              <label htmlFor="file-selector" className="font-bold">
+              <label
+                htmlFor="file-selector"
+                className="font-bold text-sm xs:text-base"
+              >
                 Select Files (Multiple Selection)
               </label>
               <button
                 id="select-button"
-                className="px-4 py-2 rounded-md bg-primary text-black hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-3xl"
+                className="px-4 py-1 xs:py-2 rounded-md bg-primary text-black hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-3xl"
                 onClick={handleClick}
               >
                 Browse files
@@ -130,7 +133,7 @@ const CreateAssignment = ({ classID, clsworks, isExam = false }) => {
               </div>
             </div>
             <button
-              className="my-2 w-full bg-[#123C3E] text-white p-3 rounded-lg"
+              className="my-2 w-full bg-[#123C3E] text-white p-1 sm:p-2 rounded-lg"
               onClick={handlePost}
             >
               Post

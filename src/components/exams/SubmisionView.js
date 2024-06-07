@@ -47,8 +47,8 @@ const SubmisionView = ({ submision }) => {
     //eslint-disable-next-line
   }, []);
   return (
-    <div className="flex justify-between px-8 my-3 bg-[#123C3E] items-center py-3 rounded-2xl">
-      <div className="flex items-center">
+    <div className="flex justify-between flex-col md:flex-row px-4 md:px-8 my-3 bg-[#123C3E] items-center py-3 rounded-2xl">
+      <div className="flex items-center my-3 md:my-0">
         <Avatar sx={{ height: 50, width: 50 }} src={user.dp} />
         <div className="ml-4 ">
           <h3 className="text-xl font-semibold text-white">{user.name}</h3>
@@ -58,7 +58,7 @@ const SubmisionView = ({ submision }) => {
           </h5>
         </div>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center my-3 md:my-0">
         <input
           type="number"
           className="outline-none w-[60px] h-[35px] p-1 appearance-none text-center"

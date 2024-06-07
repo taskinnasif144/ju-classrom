@@ -42,16 +42,16 @@ const StudentListItem = ({ std, classID, rmSTD, isAdd }) => {
 
   return (
     <div
-      className="flex items-center p-7 hover:shadow w-full cursor-pointer"
+      className="flex items-center p-3 sm:p-5 hover:shadow w-full cursor-pointer"
       onClick={handleAddStudentToClass}
     >
-      <Avatar sx={{ height: 60, width: 60 }} src={stdData.dp} />
+      <Avatar sx={{ height: 50, width: 50 }} src={stdData.dp} />
 
-      <div className="ml-4">
+      <div className="ml-2 ">
         <div className="flex justify-between">
-          <h3 className="text-xl font-semibold">{stdData.name}</h3>
+          <h3 className="text-base sm:text-lg font-semibold">{stdData.name}</h3>
         </div>
-        <div className="mt-1 pt-1 border-t-2 border-black">
+        <div className="mt-1 pt-1 border-t-2 border-black text-sm sm:text-base">
           <span>{stdData.ID}</span>
           <span>
             Batch: {stdData.batch}th Dept: {stdData.department}

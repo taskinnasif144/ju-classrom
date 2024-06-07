@@ -101,7 +101,7 @@ const ClassRoomHeader = ({ subject, section, classID }) => {
         </div>
         <div className="flex flex-col text-xs sm:text-base">
           <Link
-            className="text-center px-3 py-2 hover:bg-[#FAF1E2] hover:text-black rounded-2xl transition-all duration-200"
+            className="text-center p-1 sm:px-3 sm:py-2 hover:bg-[#FAF1E2] hover:text-black rounded-2xl transition-all duration-200"
             href={{
               pathname: `/dashboard/classrooms/${classID}/exams`,
               query: { classID: classID },
@@ -111,7 +111,7 @@ const ClassRoomHeader = ({ subject, section, classID }) => {
           </Link>
           {facultyAccess(getDesignation()) && (
             <button
-              className="hover:bg-[#FAF1E2] hover:text-black px-3 py-2 rounded-2xl transition-all duration-200"
+              className="hover:bg-[#FAF1E2] hover:text-black p-1 sm:px-3 sm:py-2 rounded-2xl transition-all duration-200"
               onClick={findAllStudents}
             >
               Add Students
@@ -119,7 +119,7 @@ const ClassRoomHeader = ({ subject, section, classID }) => {
           )}
           {facultyAccess(getDesignation()) && (
             <button
-              className="hover:bg-[#FAF1E2] hover:text-black px-3 py-2 rounded-2xl transition-all duration-200"
+              className="hover:bg-[#FAF1E2] hover:text-black p-1 sm:px-3 sm:py-2 rounded-2xl transition-all duration-200"
               onClick={findStudentFromClass}
             >
               Remove Students
@@ -127,7 +127,7 @@ const ClassRoomHeader = ({ subject, section, classID }) => {
           )}
           {studentAccess(getDesignation()) && (
             <button
-              className="hover:bg-[#FAF1E2] hover:text-black px-3 py-2 rounded-2xl transition-all duration-200"
+              className="hover:bg-[#FAF1E2] hover:text-black p-1 sm:px-3 sm:py-2 rounded-2xl transition-all duration-200"
               onClick={handleLeaveClass}
             >
               Leave Class

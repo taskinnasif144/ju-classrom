@@ -39,16 +39,18 @@ const ClassWorkView = ({ examInfo, isExam = false }) => {
     // eslint-disable-next-line
   }, []);
   return (
-    <div className="my-8 shadow-3xl p-8 pb-2">
+    <div className="my-4 sm:my-8 shadow-3xl p-3 xs:p-5 rounded-2xl">
       <div className="">
         <div className="flex justify-between">
           <div className="flex items-center">
             <Avatar src={examInfo.facultyDp} />
-            <h3 className="text-xl font-normal ml-3">{examInfo.facultyName}</h3>
+            <h3 className="text-base sm:text-xl font-normal ml-2 xs:ml-3">
+              {examInfo.facultyName}
+            </h3>
           </div>
           {isExam && (
             <div className="">
-              <h4 className="flex  items-center">
+              <h4 className="flex  items-center text-sm xs: text-base">
                 Marks:
                 <div className="flex flex-col ml-2 text-center">
                   {studentAccess(getDesignation()) && (
@@ -63,8 +65,10 @@ const ClassWorkView = ({ examInfo, isExam = false }) => {
           )}
         </div>
         <div>
-          <h4 className="text-xl font-semibold my-4">{examInfo.title}</h4>
-          <p className="text-md">{examInfo.description}</p>
+          <h4 className="text-lg xs:text-xl font-semibold my-4">
+            {examInfo.title}
+          </h4>
+          <p className="text-sm xs:text-md">{examInfo.description}</p>
         </div>
         <div className="flex flex-wrap my-4">
           {examInfo.files.map((f) => (
