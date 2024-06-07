@@ -29,8 +29,13 @@ const Sidebar = () => {
   const [assignmentState, setAssignmentState] = useState(false);
   const [resultState, setResultState] = useState(false);
   const [designation, setDesignation] = useState("");
-
   const [cookies, setCookies] = useCookies([token]);
+
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
 
   const router = useRouter();
 
@@ -112,14 +117,20 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="bg-[#123C3E] h-screen w-[400px] flex items-center flex-col fixed left-0">
-      <SiderBarUpper />
+    <div
+      className={`bg-[#123C3E] h-screen flex items-center flex-col fixed left-0  overflow-hidden z-40 ${
+        expanded ? "w-[250px] sxs:w-[320px] xs:w-[400px] " : "w-[70px]"
+      }`}
+    >
+      <SiderBarUpper state={expanded} toggle={toggleExpanded} />
       <div>
         <SideBarButton
           isActive={dashState}
           Icon={DashboardOutlinedIcon}
           label={"Dashboard"}
           func={activeDashboard}
+          state={expanded}
+          toggle={toggleExpanded}
         />
         {adminAccess(designation) && (
           <SideBarButton
@@ -127,6 +138,8 @@ const Sidebar = () => {
             Icon={GroupAddIcon}
             label={"Create User"}
             func={activeCreateUser}
+            state={expanded}
+            toggle={toggleExpanded}
           />
         )}
         {adminAccess(designation) && (
@@ -135,6 +148,8 @@ const Sidebar = () => {
             Icon={ManageAccountsIcon}
             label={"Edit Result"}
             func={activeEditUser}
+            state={expanded}
+            toggle={toggleExpanded}
           />
         )}
         {facultyAccess(designation) || studentAccess(designation) ? (
@@ -143,33 +158,27 @@ const Sidebar = () => {
             label={"Classroom"}
             isActive={classRoomState}
             func={activeClassRoom}
+            state={expanded}
+            toggle={toggleExpanded}
           />
         ) : (
           <></>
         )}
-        {facultyAccess(designation) && (
-          <SideBarButton
-            Icon={AssignmentTurnedInIcon}
-            label={"Exams"}
-            isActive={assignmentState}
-            func={activeAssignment}
-          />
-        )}
-        {facultyAccess(designation) && (
-          <SideBarButton
-            Icon={GradingIcon}
-            label={"Result"}
-            isActive={resultState}
-            func={activeResult}
-          />
-        )}
+
         <SideBarButton
           isActive={profileState}
           Icon={PersonIcon}
           label={"Profile"}
           func={activeProfile}
+          state={expanded}
+          toggle={toggleExpanded}
         />
-        <SideBarButton Icon={LogoutIcon} label={"LogOut"} func={handleLogOut} />
+        <SideBarButton
+          Icon={LogoutIcon}
+          label={"LogOut"}
+          func={handleLogOut}
+          state={expanded}
+        />
       </div>
     </div>
   );

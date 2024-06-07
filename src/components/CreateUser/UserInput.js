@@ -62,10 +62,12 @@ const UserInput = ({ isStudent }) => {
   };
 
   return (
-    <div className="w-[550px] h-[735px] text-center shadow-2xl bg-[#FAF1E2] mx-12">
+    <div className="w-full sm:w-[40%] h-[735px] text-center shadow-2xl bg-[#FAF1E2] mx-5 sm:mx-12">
       <div className="p-8">
-        <h4 className="text-5xl">{isStudent ? "Student" : "Faculty"}</h4>
-        <h5 className="text-gray-600">New User</h5>
+        <h4 className="text-2xl sm:text-5xl">
+          {isStudent ? "Student" : "Faculty"}
+        </h4>
+        <h5 className="text-gray-600 text-xs sm:text-lg">New User</h5>
       </div>
       <div>
         <input

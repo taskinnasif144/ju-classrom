@@ -4,8 +4,6 @@ import { getDesignation, getID } from "@/Helpers/getLocalDatas";
 import { studentAccess } from "@/Helpers/userAccess";
 import ClassRoom from "@/components/general/ClassRoom";
 import queryAllData from "@/firebase/firestore/queryAllData";
-import { Height } from "@mui/icons-material";
-import { Avatar } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
@@ -16,7 +14,6 @@ const ClassesPage = () => {
   const router = useRouter();
 
   const handleClassroomRouting = (clsID) => {
-    S;
     router.push(`/dashboard/classrooms/${clsID}`);
   };
 

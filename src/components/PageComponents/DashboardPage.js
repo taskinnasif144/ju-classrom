@@ -30,7 +30,7 @@ const DashboardPage = () => {
   return (
     <div className="w-full h-screen">
       <div className="m-6 my-8">
-        <h2 className="text-7xl">
+        <h2 className="text-4xl sm:text-7xl">
           Welcome!
           <br /> {name}
         </h2>

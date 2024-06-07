@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex pl-[400px]">
+        <div className="flex pl-[70px]">
           <Sidebar />
           {children}
         </div>

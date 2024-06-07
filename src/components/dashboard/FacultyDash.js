@@ -35,14 +35,14 @@ const FacultyDash = () => {
   }, []);
 
   return (
-    <div className="m-12 flex flex-wrap">
+    <div className="m-4 sm:m-12 flex flex-wrap">
       <FacultyOpts label={"Create Class"} func={activeCreateClassState} />
 
       {createCLSstate && (
         <CreateClass func={activeCreateClassState} toast={toast} />
       )}
 
-      <div className="w-full p-12">
+      <div className="w-full ">
         {classrooms.map((cls) => (
           <div
             key={cls.id}

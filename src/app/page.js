@@ -50,23 +50,23 @@ export default function Home() {
   };
   return (
     <main className="w-full h-screen flex justify-center items-center ">
-      <div className="flex flex-col shadow-2xl px-10 py-28 rounded-3xl">
-        <h3 className="text-4xl pb-3">LOG IN</h3>
+      <div className="flex flex-col xs:shadow-2xl xs:px-10 xs:py-28 xs:rounded-3xl">
+        <h3 className="text-3xl xs:text-4xl pb-3">LOG IN</h3>
         <input
-          className="w-96 px-4 py-2 mb-4"
+          className="w-80 xs:w-96 px-4 py-2 mb-4"
           placeholder="Enter your login ID"
           value={id}
           onChange={(e) => setID(e.target.value)}
         />
         <input
-          className="w-96 px-4 py-2"
+          className="w-80 xs:w-96 px-4 py-2"
           placeholder="Enter Your password"
           value={pass}
           onChange={(e) => setPass(e.target.value)}
         />
         <button
           onClick={toHomePage}
-          className="w-96 bg-[#123C3E] text-white py-2 mt-6"
+          className="w-80 xs:w-96 bg-[#123C3E] text-white py-2 mt-6"
         >
           LOG IN
         </button>

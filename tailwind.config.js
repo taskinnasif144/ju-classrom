@@ -15,6 +15,18 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        sxs: "300px",
+        xs: "480px",
+        sm: "768px",
+        // => @media (min-width: 576px) { ... }
+
+        md: "1024px",
+        // => @media (min-width: 960px) { ... }
+
+        lg: "1440px",
+        // => @media (min-width: 1440px) { ... }
+      },
       boxShadow: {
         "3xl": "2px 5px 15px -4px rgba(0, 0, 0, 0.3)",
       },

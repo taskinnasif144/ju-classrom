@@ -33,42 +33,42 @@ const CreateClass = ({ func, toast }) => {
   };
 
   return (
-    <div className="w-full p-12 shadow-3xl bg-[#FAF1E2] ">
-      <h3 className="text-2xl mb-4">Create Class</h3>
+    <div className="w-full p-6 sm:p-12 shadow-3xl bg-[#FAF1E2] ">
+      <h3 className="text-xl sm:text-2xl mb-2 sm:mb-4">Create Class</h3>
       <div>
         <input
-          className="w-full bg-transparent shadow-3xl px-6 py-4 rounded-lg my-4 outline-none"
+          className="w-full bg-transparent shadow-3xl px-3 sm:px-2  py-4 rounded-lg my-4 outline-none"
           placeholder="Department"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <input
-          className="w-full bg-transparent shadow-3xl px-6 py-4 rounded-lg my-4 outline-none"
+          className="w-full bg-transparent shadow-3xl px-3 sm:px-6 py-4 rounded-lg my-4 outline-none"
           placeholder="Section"
           value={section}
           onChange={(e) => setSection(e.target.value)}
         />
         <input
-          className="w-full bg-transparent shadow-3xl px-6 py-4 rounded-lg my-4 outline-none"
+          className="w-full bg-transparent shadow-3xl px-3 sm:px-6 py-4 rounded-lg my-4 outline-none"
           placeholder="Subject"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
         />
         <input
-          className="w-full bg-transparent shadow-3xl px-6 py-4 rounded-lg my-4 outline-none"
+          className="w-full bg-transparent shadow-3xl px-3 sm:px-6 py-4 rounded-lg my-4 outline-none"
           placeholder="Room"
           value={room}
           onChange={(e) => setRoom(e.target.value)}
         />
         <div className="flex justify-end">
           <button
-            className="my-4 px-5 py-3 text-xl  hover:scale-110"
+            className="my-1 sm:my-4 px-5 py-3 text-xl  hover:scale-110"
             onClick={func}
           >
             Cancel
           </button>
           <button
-            className="my-4 px-5 py-3 text-xl hover:scale-110"
+            className="my-1 sm:my-4 px-5 py-3 text-xl hover:scale-110"
             onClick={handleCreateclass}
           >
             Create
