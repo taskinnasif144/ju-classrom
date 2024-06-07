@@ -77,7 +77,7 @@ const ClassWorkView = ({ examInfo, isExam = false }) => {
         </div>
       </div>
 
-      {!isExam && <ClassWorkComment />}
+      {/* {!isExam && <ClassWorkComment />} */}
       {isExam && studentAccess(getDesignation()) ? (
         <ExamSubmission examID={examInfo.id} />
       ) : (

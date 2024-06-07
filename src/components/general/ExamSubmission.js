@@ -83,7 +83,7 @@ const ExamSubmission = ({ examID }) => {
         onChange={handleFileChange}
       />
       <label
-        className="w-full text-xl shadow-3xl block p-2 cursor-pointer"
+        className="w-full text-base sm:text-xl shadow-3xl block p-1 xs:p-2 cursor-pointer"
         htmlFor="file_select"
       >
         Browse Answer
@@ -95,7 +95,7 @@ const ExamSubmission = ({ examID }) => {
         </div>
       )}
       <button
-        className="text-xl mt-4 bg-[#123C3E] w-full text-white p-2 rounded-3xl cursor-pointer"
+        className="text-base sm:text-xl mt-4 bg-[#123C3E] w-full text-white p-1 xs:p-2 rounded-3xl cursor-pointer"
         onClick={handleSubmit}
       >
         Submit
