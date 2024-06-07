@@ -43,7 +43,7 @@ function FileSelector() {
     <div className="flex flex-col items-center space-y-2">
       <label
         htmlFor="fileInput"
-        className="text-gray-700 cursor-pointer text-3xl hover:border-2 border-black px-4 py-3"
+        className="text-gray-700 cursor-pointer text-xl sm:text-3xl hover:border-2 border-black px-4 py-3"
       >
         Choose File
       </label>

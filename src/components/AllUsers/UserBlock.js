@@ -29,14 +29,14 @@ const UserBlock = ({ userData, rm, isStudent, add }) => {
   };
 
   return (
-    <div className="shadow-3xl p-8 my-8">
+    <div className="shadow-3xl p-3 xs:p-4 my-4  rounded-2xl">
       <div className="flex items-center">
-        <Avatar sx={{ width: 80, height: 80 }} src={userData.dp} />
-        <div className="pl-6">
-          <h2 className="text-3xl font-semibold border-b-2 border-black pb-2">
+        <Avatar sx={{ width: 70, height: 70 }} src={userData.dp} />
+        <div className="pl-3 sm:pl-6">
+          <h2 className="text-lg sm:text-xl font-semibold border-b-2 border-black pb-2">
             {userData.name}
           </h2>
-          <div className="pt-2 flex flex-col text-lg text-gray-600">
+          <div className="pt-2 flex flex-col text-sm sm:text-lg text-gray-600">
             <span>ID: {userData.ID}</span>
             <span>
               section: {userData.section} batch: {userData.batch} dept:{" "}
@@ -45,7 +45,7 @@ const UserBlock = ({ userData, rm, isStudent, add }) => {
           </div>
         </div>
       </div>
-      <div className="text-xl flex justify-end text-gray-600">
+      <div className="text-base sm:text-xl flex justify-end text-gray-600">
         <button className="hover:text-black px-4" onClick={changeUserType}>
           Change
         </button>

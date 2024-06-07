@@ -62,7 +62,7 @@ const UserInput = ({ isStudent }) => {
   };
 
   return (
-    <div className="w-full sm:w-[40%] h-[735px] text-center shadow-2xl bg-[#FAF1E2] mx-5 sm:mx-12">
+    <div className="w-[90%] md:w-[40%] h-[735px] text-center shadow-2xl bg-[#FAF1E2] m-5 sm:m-12">
       <div className="p-8">
         <h4 className="text-2xl sm:text-5xl">
           {isStudent ? "Student" : "Faculty"}
@@ -71,43 +71,43 @@ const UserInput = ({ isStudent }) => {
       </div>
       <div>
         <input
-          className="w-4/5 shadow-3xl bg-transparent p-4 border-none outline-none my-2"
+          className="w-[90%] shadow-3xl bg-transparent p-3 py-4 border-none outline-none my-2"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <input
-          className="w-4/5 shadow-3xl bg-transparent p-4 border-none outline-none my-2"
+          className="w-[90%] shadow-3xl bg-transparent p-3 py-4 border-none outline-none my-2"
           placeholder="ID"
           value={id}
           onChange={(e) => setId(e.target.value)}
         />
         <input
-          className="w-4/5 shadow-3xl bg-transparent p-4 border-none outline-none my-2"
+          className="w-[90%] shadow-3xl bg-transparent p-3 py-4 border-none outline-none my-2"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          className="w-4/5 shadow-3xl bg-transparent p-4 border-none outline-none my-2"
+          className="w-[90%] shadow-3xl bg-transparent p-3 py-4 border-none outline-none my-2"
           placeholder="Department"
           value={department}
           onChange={(e) => setDepartment(e.target.value)}
         />
         <input
-          className="w-4/5 shadow-3xl bg-transparent p-4 border-none outline-none my-2"
+          className="w-[90%] shadow-3xl bg-transparent p-3 py-4 border-none outline-none my-2"
           placeholder={isStudent ? "Batch" : "Designation"}
           value={batch}
           onChange={(e) => setBatch(e.target.value)}
         />
         <input
-          className="w-4/5 shadow-3xl bg-transparent p-4 border-none outline-none my-2"
+          className="w-[90%] shadow-3xl bg-transparent p-3 py-4 border-none outline-none my-2"
           placeholder="Username"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
         <input
-          className="w-4/5 shadow-3xl bg-transparent p-4 border-none outline-none my-2"
+          className="w-[90%] shadow-3xl bg-transparent p-3 py-4 border-none outline-none my-2"
           placeholder="Default Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -115,10 +115,16 @@ const UserInput = ({ isStudent }) => {
       </div>
 
       <div className="flex w-[90%] justify-end">
-        <button className="p-4 hover:shadow-xl mx-3" onClick={handleCancel}>
+        <button
+          className="p-3 py-4 hover:shadow-xl mx-3"
+          onClick={handleCancel}
+        >
           Cancel
         </button>
-        <button className="p-4 hover:shadow-xl" onClick={handleDataSubmission}>
+        <button
+          className="p-3 py-4 hover:shadow-xl"
+          onClick={handleDataSubmission}
+        >
           Create
         </button>
       </div>

@@ -29,8 +29,8 @@ const UserList = ({ isStudent }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="px-12 flex flex-col">
-      <h3 className="text-5xl font-bold">
+    <div className="p-6 sm:px-12 flex flex-col">
+      <h3 className="text-2xl sm:text-4xl font-bold">
         {isStudent ? "Student" : "Faculty"}
       </h3>
       <div>

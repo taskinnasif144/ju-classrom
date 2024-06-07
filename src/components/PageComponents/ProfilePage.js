@@ -46,18 +46,18 @@ const ProfilePage = () => {
   }, []);
 
   return (
-    <div className="m-20">
-      <div className="flex items-center my-10">
+    <div className="m-4 xs:m-8 sm:m-20">
+      <div className="flex items-center flex-col sm:flex-row my-10">
         <Avatar src={dp} sx={{ width: 220, height: 220 }} />
-        <div className="ml-8">
+        <div className="ml-0 mt-6 sm:mt-0 sm:ml-8">
           <FileSelector />
         </div>
       </div>
 
       <div className="flex flex-col">
-        <h3 className="text-4xl ">Change Password</h3>
+        <h3 className="text-xl sm:text-4xl ">Change Password</h3>
         <input
-          className="w-[450px] bg-transparent shadow-3xl px-8 py-5 rounded-xl outline-none my-3"
+          className="max-w-[450px] w-full bg-transparent shadow-3xl p-3 px-4 rounded-xl outline-none my-3 text-xs xs:text-sm sm:text-base"
           placeholder="Enter Old Password"
           value={oldPass}
           onChange={(e) => {
@@ -65,7 +65,7 @@ const ProfilePage = () => {
           }}
         />
         <input
-          className="w-[450px] bg-transparent shadow-3xl px-8 py-5 rounded-xl outline-none my-3"
+          className="max-w-[450px] w-full bg-transparent shadow-3xl p-3 px-4 rounded-xl outline-none my-3 text-xs xs:text-sm sm:text-base"
           placeholder="Enter New Password"
           value={newPass}
           onChange={(e) => {
@@ -73,7 +73,7 @@ const ProfilePage = () => {
           }}
         />
         <input
-          className="w-[450px] bg-transparent shadow-3xl px-8 py-5 rounded-xl outline-none my-3"
+          className="max-w-[450px]  w-full  bg-transparent shadow-3xl p-3 px-4 rounded-xl outline-none my-3 text-xs xs:text-sm sm:text-base"
           placeholder="Re-Enter New Password"
           value={reNewPass}
           onChange={(e) => {
@@ -81,7 +81,7 @@ const ProfilePage = () => {
           }}
         />
         <button
-          className="w-[450px] my-2 py-4 text-center bg-[#123C3E] text-[#FAF1E2] text-2xl rounded-xl"
+          className="max-w-[450px]  w-full  my-2 py-2 text-center bg-[#123C3E] text-[#FAF1E2] text-base xs:text-xl rounded-xl"
           onClick={handleConfirmPassChange}
         >
           Confirm
