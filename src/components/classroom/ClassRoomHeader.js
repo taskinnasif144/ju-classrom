@@ -84,20 +84,22 @@ const ClassRoomHeader = ({ subject, section, classID }) => {
 
   return (
     <div>
-      <div className="bg-[#123C3E] text-[#FAF1E2] pt-16 p-6 flex justify-between relative">
+      <div className="bg-[#123C3E] text-[#FAF1E2] pt-16 p-4 xs:p-6 flex justify-between relative">
         <div>
-          <h2 className="text-6xl"> {subject}</h2>
-          <h3 className="text-2xl"> {section}</h3>
+          <h2 className="text-2xl sm:text-6xl"> {subject}</h2>
+          <h3 className="text-lg sm:text-2xl"> {section}</h3>
           {facultyAccess(getDesignation()) && (
             <div className="flex items-center justify-center">
-              <span className="mr-2">classID: {classID}</span>
-              <button onClick={handleCopy}>
-                <ContentCopyIcon />
+              <span className="text-xs sm:text-base mr-1 sm:mr-2">
+                {classID}
+              </span>
+              <button onClick={handleCopy} className="sm:text-xl">
+                <ContentCopyIcon fontSize="inherit" />
               </button>
             </div>
           )}
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col text-xs sm:text-base">
           <Link
             className="text-center px-3 py-2 hover:bg-[#FAF1E2] hover:text-black rounded-2xl transition-all duration-200"
             href={{

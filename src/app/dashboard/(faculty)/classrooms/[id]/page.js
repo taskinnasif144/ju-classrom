@@ -4,7 +4,7 @@ import React from "react";
 
 const page = ({ params }) => {
   return (
-    <div className="w-full p-12">
+    <div className="w-full p-4 sm:p-12">
       <InsideClassRoom classID={params.id} />
     </div>
   );
